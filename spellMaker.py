@@ -11,43 +11,28 @@ class Schools(enum.Enum):
     Blood = 6
     Enchantment = 7
 
-def addEffect(schoolID, rarity, file, effect):
-
-    school = str(Schools(schoolID))
-
-    with open (file, 'r') as infile:
-        currSpellDict = json.load(infile)
-
-    currSpellID = currSpellDict['ID']+1
-
-    if not school in currSpellDict.keys():
-        currSpellDict[school] = []
-
-    currSpellDict[school].append({
-        'rarity': rarity,
-        'effect': effect,
-        'id': currSpellID
-    })
-
-    currSpellDict['ID'] = currSpellID
-
-    with open (file, 'w') as outfile:
-        json.dump(currSpellDict, outfile)
+#class Rarity(enum.Enum):
+#    Common = 0
+#    Uncommon = 1
+#    Rare = 2
+#    Epic = 3
+#    Legendary = 4
+#    Mythic = 5
 
 
-def hardReset():
-    with open("data.spell", 'w') as outfile:
-        json.dump({"ID": 0}, outfile)
+def addEffect():
+    print("hello world")
 
         
 def main():
-    hardReset()
-    addEffect(
-        1,
-        "rare",
-        "data.spell",
-        "deathcum"
-    )
+    print("hello world")
 
 
 main()
+
+
+
+#    with open (file, 'r') as infile:
+        #currSpellDict = json.load(infile)
+#with open (file, 'w') as outfile:
+ #   json.dump(currSpellDict, outfile)
